@@ -1,3 +1,14 @@
 ---
 aegir_root: '/var/aegir'
 aegir_user: 'aegir'
+aegir_manage_dependencies: true
+aegir_dependencies:
+  - php5
+  - php5-cli
+  - php5-gd
+  - php5-mysql
+  - postfix
+  - sudo
+  - rsync
+  - git
+  - unzip

@@ -1,1 +1,7 @@
 ---
+- name: Ensure Aegir's dependencies are installed.
+  apt:
+    name: "{{ item }}"
+    state: installed
+  when: (aegir_manage_dependencies == true) and (ansible_os_family == 'Debian')
+  with_items: aegir_dependencies
