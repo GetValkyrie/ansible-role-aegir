@@ -1,8 +1,10 @@
 ---
 aegir_root: '/var/aegir'
 aegir_user: 'aegir'
+aegir_web_group: 'www-data'
 aegir_manage_dependencies: true
 aegir_dependencies:
+  - apache2
   - php5
   - php5-cli
   - php5-gd

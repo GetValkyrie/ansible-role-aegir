@@ -5,3 +5,16 @@
     state: installed
   when: (aegir_manage_dependencies == true) and (ansible_os_family == 'Debian')
   with_items: aegir_dependencies
+
+# Ref.: http://community.aegirproject.org/installing/manual#Create_the_Aegir_user
+- name: Create 'aegir' group
+  group:
+    name: "{{ aegir_user }}"
+    system: yes
+- name: Create 'aegir' user
+  user:
+    name: "{{ aegir_user }}"
+    system: yes
+    home: "{{ aegir_root }}"
+    group: "{{ aegir_user }}"
+    groups: "{{ aegir_user }},{{ aegir_web_group }}"
