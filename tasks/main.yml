@@ -18,3 +18,18 @@
     home: "{{ aegir_root }}"
     group: "{{ aegir_user }}"
     groups: "{{ aegir_user }},{{ aegir_web_group }}"
+
+# Ref.: http://community.aegirproject.org/installing/manual#Install_provision
+- name: Clone Provision
+  git:
+    repo: "{{ aegir_provision_repo }}"
+    dest: "{{ aegir_root }}/.drush/provision"
+    depth: 1 # speeds things up
+    version: "{{ aegir_provision_version }}"
+    update: "{{ aegir_provision_update }}"
+  sudo: yes
+  sudo_user: "{{ aegir_user }}"
+- name: Clear Drush cache for Provision extension
+  command: drush @none cc drush
+  sudo: yes
+  sudo_user: "{{ aegir_user }}"

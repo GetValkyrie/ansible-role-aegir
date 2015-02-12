@@ -14,3 +14,6 @@ aegir_dependencies:
   - rsync
   - git
   - unzip
+aegir_provision_repo: http://git.drupal.org/project/provision.git
+aegir_provision_version: 7.x-3.x
+aegir_provision_update: false
