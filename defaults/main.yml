@@ -20,3 +20,4 @@ aegir_provision_update: false
 aegir_http_service_type: apache
 aegir_makefile: /var/aegir/.drush/provision/aegir.make
 aegir_platform_version: 7.x-3.x
+aegir_frontend_url: aegir.local
