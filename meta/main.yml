@@ -1,6 +1,7 @@
 ---
 dependencies:
   - { role: geerlingguy.drush }
+  - { role: geerlingguy.mysql }
 
 galaxy_info:
   author: ergonlogic
