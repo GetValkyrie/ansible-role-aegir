@@ -10,8 +10,8 @@ before_install:
   - sudo apt-get install curl
 
 install:
-  # Install Ansible.
-  - pip install ansible
+  # Install Ansible from sources.
+  - curl https://raw.githubusercontent.com/GetValkyrie/ansible-bootstrap/master/install-ansible.sh|sudo /bin/sh
 
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
