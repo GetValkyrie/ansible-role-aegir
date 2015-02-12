@@ -1,7 +1,7 @@
 ---
-aegir_root: '/var/aegir'
-aegir_user: 'aegir'
-aegir_web_group: 'www-data'
+aegir_root: /var/aegir
+aegir_user: aegir
+aegir_web_group: www-data
 aegir_manage_dependencies: true
 aegir_dependencies:
   - apache2
@@ -17,3 +17,4 @@ aegir_dependencies:
 aegir_provision_repo: http://git.drupal.org/project/provision.git
 aegir_provision_version: 7.x-3.x
 aegir_provision_update: false
+aegir_http_service_type: apache

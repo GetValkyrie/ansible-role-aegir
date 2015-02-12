@@ -1,0 +1,16 @@
+---
+- name: Enable mod-rewrite
+  apache2_module:
+    name: rewrite
+- name: Make Aegir's Apache config available
+  file:
+    state: link
+    path: /etc/apache2/conf-available/aegir.conf
+    src: "{{ aegir_root }}/config/apache.conf"
+    force: yes  # the target doesn't exist yet
+- name: Enable Aegir's Apache config
+  file:
+    state: link
+    path: /etc/apache2/conf-enabled/aegir.conf
+    src: /etc/apache2/conf-available/aegir.conf
+    force: yes  # the target doesn't exist yet

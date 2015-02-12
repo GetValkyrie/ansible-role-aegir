@@ -31,5 +31,11 @@
   sudo_user: "{{ aegir_user }}"
 - name: Clear Drush cache for Provision extension
   command: drush @none cc drush
+  args:
+    creates: "{{ aegir_root }}/.drush/cache/"
   sudo: yes
   sudo_user: "{{ aegir_user }}"
+
+# Ref.: http://community.aegirproject.org/installing/manual#Apache_configuration
+- include: setup-apache.yml
+  when: aegir_http_service_type == 'apache'
