@@ -17,7 +17,8 @@
     system: yes
     home: "{{ aegir_root }}"
     group: "{{ aegir_user }}"
-    groups: "{{ aegir_user }},{{ aegir_web_group }}"
+    groups: "{{ aegir_web_group }}"
+    append: yes
 
 # Ref.: http://community.aegirproject.org/installing/manual#Install_provision
 - name: Clone Provision
