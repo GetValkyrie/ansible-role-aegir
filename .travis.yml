@@ -8,6 +8,15 @@ env:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install curl
+  # Avoid harmless (but annoying) warnings.
+  - mkdir ~/.python-eggs
+  - chmod 700 ~/.python-eggs
+  # Completely remove mysql
+  - sudo apt-get remove -y --purge mysql-server mysql-client mysql-common
+  - sudo apt-get autoremove -y
+  - sudo apt-get autoclean
+  - sudo rm -rf /var/lib/mysql
+  - sudo rm -rf /root/.my.cnf
 
 install:
   # Install Ansible from sources.
