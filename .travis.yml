@@ -5,6 +5,10 @@ python: "2.7"
 env:
   - SITE=test.yml
 
+notifications:
+  slack:
+    secure: "AIKMmxzYL6xbpY4uN8BxhXDs+Em/PpVHy4OZcnal6+jBKW5xNNPOXiZ1KyZuaC40sYzW43CC3xUYS8KxQ1JvAvkZoGQp6XgLBV5xePNd5vVx1+v/vwzCOSRaWU9wse/ROYYxHJCZ4Hbf5w+k0K2SGQwtKqlzNwcfL8OcBmattdA="
+
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install curl

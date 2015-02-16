@@ -1,6 +1,6 @@
 # Ansible Role: Aegir
 
-[![Build Status](https://travis-ci.org/GetValkyrie/ansible-aegir.svg?branch=master)](https://travis-ci.org/GetValkyrie/ansible-aegir)
+[![Build Status](https://travis-ci.org/GetValkyrie/ansible-role-aegir.svg?branch=master)](https://travis-ci.org/GetValkyrie/ansible-role-aegir)
 
 Installs Aegir, a control panel for deploying and managing large networks of Drupal sites.
 
