@@ -8,9 +8,25 @@
     path: /etc/apache2/conf-available/aegir.conf
     src: "{{ aegir_root }}/config/apache.conf"
     force: yes  # the target doesn't exist yet
+  when: >
+    ((ansible_distribution == "Ubuntu") and (ansible_distribution_version|int >= 13.10)) or
+    ((ansible_distribution == "Debian") and (ansible_distribution_version|int >= 7))
 - name: Enable Aegir's Apache config
   file:
     state: link
     path: /etc/apache2/conf-enabled/aegir.conf
     src: /etc/apache2/conf-available/aegir.conf
     force: yes  # the target doesn't exist yet
+  when: >
+    ((ansible_distribution == "Ubuntu") and (ansible_distribution_version|int >= 13.10)) or
+    ((ansible_distribution == "Debian") and (ansible_distribution_version|int >= 7))
+
+- name: Enable Aegir's Apache config
+  file:
+    state: link
+    path: /etc/apache2/conf.d/aegir.conf
+    src: "{{ aegir_root }}/config/apache.conf"
+    force: yes  # the target doesn't exist yet
+  when: >
+    ((ansible_distribution == "Ubuntu") and (ansible_distribution_version|int < 13.10)) or
+    ((ansible_distribution == "Debian") and (ansible_distribution_version|int < 7))
