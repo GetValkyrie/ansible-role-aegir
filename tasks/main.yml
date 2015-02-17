@@ -48,8 +48,14 @@
     content: "{{ aegir_user }} ALL=NOPASSWD: /usr/sbin/apache2ctl\n{{ aegir_user }} ALL=NOPASSWD: /etc/init.d/nginx\n\n"
     mode: 0440
 
+- name: Write Hostmaster makefile
+  copy:
+    dest: "{{ aegir_root }}/aegir.make"
+    content: "{{ aegir_makefile_contents }}"
+    owner: "{{ aegir_user }}"
+
 - name: Build Hostmaster platform
-  command: "drush make {{ aegir_makefile }} {{ aegir_root }}/hostmaster-{{ aegir_platform_version }} --working-copy --no-gitinfofile"
+  command: "drush make {{ aegir_root }}/aegir.make {{ aegir_root }}/hostmaster-{{ aegir_platform_version }} --working-copy --no-gitinfofile"
   args:
     creates: "{{ aegir_root }}/hostmaster-{{ aegir_platform_version }}/"
   sudo: yes
