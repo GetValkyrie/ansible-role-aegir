@@ -53,6 +53,7 @@
     dest: "{{ aegir_root }}/aegir.make"
     content: "{{ aegir_makefile_contents }}"
     owner: "{{ aegir_user }}"
+    group: "{{ aegir_user }}"
 
 - name: Build Hostmaster platform
   command: "drush make {{ aegir_root }}/aegir.make {{ aegir_root }}/hostmaster-{{ aegir_platform_version }} --working-copy --no-gitinfofile"
