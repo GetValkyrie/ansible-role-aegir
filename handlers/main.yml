@@ -1,0 +1,10 @@
+---
+- name: Clear Drush cache
+  command: drush @none cc drush
+  sudo: yes
+  sudo_user: "{{ aegir_user }}"
+
+- name: Verify Aegir front-end
+  command: drush @hm provision-verify
+  sudo: yes
+  sudo_user: "{{ aegir_user }}"
