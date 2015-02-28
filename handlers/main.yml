@@ -5,6 +5,6 @@
   sudo_user: "{{ aegir_user }}"
 
 - name: Verify Aegir front-end
-  command: drush @hm provision-verify
+  shell: drush @hm cc drush && drush @hm hosting-task @hostmaster verify --force
   sudo: yes
   sudo_user: "{{ aegir_user }}"
