@@ -21,6 +21,12 @@
     append: yes
 
 # Ref.: http://community.aegirproject.org/installing/manual#Install_provision
+- name: Create ~/.drush/ for 'aegir' user.
+  file:
+    path: /var/aegir/.drush
+    state: directory
+    owner: "{{ aegir_user }}"
+    group: "{{ aegir_user }}"
 - name: Clone Provision
   git:
     repo: "{{ aegir_provision_repo }}"
