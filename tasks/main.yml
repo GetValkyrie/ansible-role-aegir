@@ -6,6 +6,13 @@
   when: (aegir_manage_dependencies == true) and (ansible_os_family == 'Debian')
   with_items: aegir_dependencies
 
+- name: Install additional packages.
+  apt:
+    name: "{{ item }}"
+    state: installed
+  when: (aegir_install_additional_packages == true) and (ansible_os_family == 'Debian')
+  with_items: aegir_additional_packages
+
 # Ref.: http://community.aegirproject.org/installing/manual#Create_the_Aegir_user
 - name: Create 'aegir' group
   group:
