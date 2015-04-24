@@ -6,7 +6,11 @@ Installs Aegir, a control panel for deploying and managing large networks of Dru
 
 ## Requirements
 
-None.
+A MySQL server is required. This server can be installed on the same machine,
+or a separate one (hence why this isn't listed as a dependency.) See the
+'Example Playbook' section below for a simple method of installing a mysql
+server with Ansible. If this role is not present, then the
+`mysql_root_username`and `mysql_root_password` variables must be set.
 
 ## Role Variables
 
@@ -21,6 +25,7 @@ Available variables are listed below, along with default values (see `defaults/m
 
     - hosts: servers
       roles:
+        - { role: geerlingguy.mysql }
         - { role: getvalkyrie.aegir }
 
 After the playbook runs, the Aegir front-end site will be available, as will

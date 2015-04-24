@@ -6,4 +6,5 @@
     - mysql_innodb_log_file_size: "5M"
   roles:
     - geerlingguy.drush
+    - geerlingguy.mysql
     - ansible-role-aegir

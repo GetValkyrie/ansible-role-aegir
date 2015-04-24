@@ -1,7 +1,6 @@
 ---
 dependencies:
   - 'git+http://github.com/GetValkyrie/ansible-role-drush.git,,geerlingguy.drush'
-  - { role: geerlingguy.mysql }
 
 galaxy_info:
   author: ergonlogic
