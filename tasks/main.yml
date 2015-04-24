@@ -88,3 +88,6 @@
     creates: "{{ aegir_root }}/hostmaster-{{ aegir_platform_version }}/sites/{{ aegir_frontend_url }}/"
   sudo: yes
   sudo_user: "{{ aegir_user }}"
+
+- include: generate-keypair.yml
+  when: aegir_generate_keypair

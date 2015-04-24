@@ -25,3 +25,4 @@ aegir_makefile: aegir.make
 aegir_makefile_contents: "{{ lookup('file', aegir_makefile) }}"
 aegir_platform_version: 7.x-3.x
 aegir_frontend_url: aegir.local
+aegir_generate_keypair: true

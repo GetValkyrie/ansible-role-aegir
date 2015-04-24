@@ -1,0 +1,8 @@
+---
+- name: Generate an SSH key-pair
+  command: "ssh-keygen -q -t rsa -N '' -C 'Aegir SSH keypair' -f {{ aegir_root }}/.ssh/id_rsa"
+  args:
+    creates: "{{ aegir_root }}/.ssh/id_rsa"
+    creates: "{{ aegir_root }}/.ssh/id_rsa.pub"
+  sudo: yes
+  sudo_user: "{{ aegir_user }}"
