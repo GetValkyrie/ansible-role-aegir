@@ -19,13 +19,13 @@ Available variables are listed below, along with default values (see `defaults/m
 
 ## Dependencies
 
-  - geerlingguy.drush (Installs Drush).
+  - getvalkyrie.drush (Installs Drush).
 
 ## Example Playbook
 
     - hosts: servers
       roles:
-        - { role: geerlingguy.mysql }
+        - { role: getvalkyrie.mysql }
         - { role: getvalkyrie.aegir }
 
 After the playbook runs, the Aegir front-end site will be available, as will

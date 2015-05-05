@@ -8,10 +8,11 @@
 #sudo rm -rf /root/.my.cnf
 
 curl https://raw.githubusercontent.com/GetValkyrie/ansible-bootstrap/master/install-ansible.sh | /bin/sh
-ansible-galaxy install --ignore-errors http://github.com/getvalkyrie/ansible-role-drush,,geerlingguy.drush
-ansible-galaxy install --ignore-errors geerlingguy.mysql
+ansible-galaxy install --ignore-errors http://github.com/getvalkyrie/ansible-role-mysql,,getvalkyrie.mysql
+ansible-galaxy install --ignore-errors http://github.com/getvalkyrie/ansible-role-drush,,getvalkyrie.drush
 target=/etc/ansible/roles/ansible-role-aegir
 if [ ! -e $target ]; then
+  mkdir -p /etc/ansible/roles
   ln -s /vagrant/ $target
 fi
  
