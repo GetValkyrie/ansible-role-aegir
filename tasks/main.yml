@@ -91,3 +91,9 @@
 
 - include: generate-keypair.yml
   when: aegir_generate_keypair
+
+- name: Ensure Hosting is recognized as enabled
+  shell: drush @hostmaster cc drush
+  sudo: yes
+  sudo_user: "{{ aegir_user }}"
+  changed_when: False
