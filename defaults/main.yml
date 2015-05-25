@@ -6,6 +6,7 @@ aegir_db_host: localhost
 aegir_manage_dependencies: true
 aegir_dependencies:
   - apache2
+  - mysql-client
   - php5
   - php5-cli
   - php5-gd
