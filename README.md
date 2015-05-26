@@ -19,7 +19,8 @@ Available variables are listed below, along with default values (see `defaults/m
 
 ## Dependencies
 
-  - getvalkyrie.drush (Installs Drush).
+  - getvalkyrie.drush (Installs Drush). Note that this role currently defaults
+    to the Drush 7.x branch. As a result, Drupal 8 isn't supported by default.
 
 ## Example Playbook
 
