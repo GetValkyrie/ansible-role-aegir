@@ -3,6 +3,8 @@ aegir_root: /var/aegir
 aegir_user: aegir
 aegir_web_group: www-data
 aegir_db_host: localhost
+aegir_db_user: {{ mysql_root_username | default('root') }}
+aegir_db_pass: {{ mysql_root_password | default('root') }}
 aegir_manage_dependencies: true
 aegir_dependencies:
   - apache2
