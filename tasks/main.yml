@@ -83,7 +83,7 @@
 
 # Ref.: # http://community.aegirproject.org/installing/manual#Running_hostmaster-install
 - name: Install Aegir front-end
-  command: "drush @none --yes hostmaster-install --debug --working-copy --aegir_db_host={{ aegir_db_host }} --aegir_db_user={{ mysql_root_username }} --aegir_db_pass={{ mysql_root_password }} --aegir_version={{ aegir_platform_version }} {{ aegir_frontend_url }} --strict=0 --root={{ aegir_root }}/hostmaster-{{ aegir_platform_version }}/"
+  command: "drush @none --yes hostmaster-install --debug --working-copy --aegir_db_host={{ aegir_db_host }} --aegir_db_user={{ aegir_db_user }} --aegir_db_pass={{ aegir_db_pass }} --aegir_version={{ aegir_platform_version }} {{ aegir_frontend_url }} --strict=0 --root={{ aegir_root }}/hostmaster-{{ aegir_platform_version }}/"
   args:
     creates: "{{ aegir_root }}/hostmaster-{{ aegir_platform_version }}/sites/{{ aegir_frontend_url }}/"
   sudo: yes
